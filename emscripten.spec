@@ -1,7 +1,7 @@
 %undefine _debugsource_packages
 
 Name: emscripten
-Version: 3.1.67
+Version: 3.1.71
 Release: 1
 Source0: https://github.com/emscripten-core/emscripten/archive/%{version}/%{name}-%{version}.tar.gz
 Summary: Compiler that compiles C and C++ to WebAssembly
