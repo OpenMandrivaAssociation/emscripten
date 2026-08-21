@@ -1,0 +1,18 @@
+LLVM 23 does not know -Wprio-ctor-dtor (added in 24). Combined with
+emscripten's -Werror this breaks the first-use compiler-rt cache build.
+
+--- a/system/lib/compiler-rt/lib/profile/GCDAProfiling.c
++++ b/system/lib/compiler-rt/lib/profile/GCDAProfiling.c
+@@ -559,9 +559,11 @@
+ // __attribute__((destructor)) and destructors whose priorities are greater than
+ // 100 run before this function and can thus be tracked. The priority is
+ // compatible with GCC 7 onwards.
+-#if __GNUC__ >= 9
++#if defined(__has_warning)
++#if __has_warning("-Wprio-ctor-dtor")
+ #pragma GCC diagnostic ignored "-Wprio-ctor-dtor"
+ #endif
++#endif
+ __attribute__((destructor(100)))
+ #endif
+ static void llvm_writeout_and_clear(void) {

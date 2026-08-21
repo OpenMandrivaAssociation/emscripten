@@ -1,3 +1,3 @@
 sources:
-  emscripten-3.1.73.tar.gz: 33866d33f59563d0415b22b9d90cdc29bb4b0998
-  emscripten-6.0.5.tar.gz: 97bbb8aa880a819589243e41702806d5d10a5d9c
+  emscripten-6.0.8.tar.gz: 9b563b55e2840b40f031f12c3f3e0a46e07c0478
+  emscripten-6.0.8-node_modules.tar.gz: 4f33f579e95010790a181a4d8d882678dff715b8
