@@ -53,6 +53,12 @@ python tools/maint/create_entry_points.py
 python tools/install.py %{buildroot}%{_prefix}/lib/emscripten
 
 tar -xf %{SOURCE1} -C %{buildroot}%{_prefix}/lib/emscripten
+# Upstream's optional native Closure compiler is a prebuilt x86-64 ELF.
+# Drop it so this stays noarch; cli.js falls back to the bundled Java compiler.
+rm -rf %{buildroot}%{_prefix}/lib/emscripten/node_modules/google-closure-compiler-linux \
+	%{buildroot}%{_prefix}/lib/emscripten/node_modules/google-closure-compiler-linux-arm64 \
+	%{buildroot}%{_prefix}/lib/emscripten/node_modules/google-closure-compiler-osx \
+	%{buildroot}%{_prefix}/lib/emscripten/node_modules/google-closure-compiler-windows
 
 cat >%{buildroot}%{_prefix}/lib/emscripten/.emscripten <<EOF
 import os
