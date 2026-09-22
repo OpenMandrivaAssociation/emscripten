@@ -1,14 +1,14 @@
 %undefine _debugsource_packages
 
 Name:		emscripten
-Version:	6.0.8
+Version:	6.0.10
 Release:	1
 Source0:	https://github.com/emscripten-core/emscripten/archive/%{version}/%{name}-%{version}.tar.gz
 # Vendored npm production modules (acorn, html-minifier-terser, closure compiler).
 # Built offline from package-lock.json. Closure uses the bundled Java compiler
 # when --closure is requested (optional; needs a JRE).
 Source1:	emscripten-%{version}-node_modules.tar.gz
-Patch0:		emscripten-6.0.8-clang23-prio-ctor-dtor.patch
+Patch0:		emscripten-6.0.10-clang23-prio-ctor-dtor.patch
 Summary:	Compiler that compiles C and C++ to WebAssembly
 URL:		https://emscripten.org/
 License:	MIT AND NCSA
