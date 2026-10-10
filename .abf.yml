@@ -1,3 +1,3 @@
 sources:
-  emscripten-6.0.11.tar.gz: bf4d7bb144a3a2766cd51081c1480be519ca2f5e
-  emscripten-6.0.11-node_modules.tar.gz: 6bd5c927909ccdf4612f417f22e555d4c8b183b4
+  emscripten-6.0.12.tar.gz: 360d629e9f7d198b325fe7917d6169e22559d55e
+  emscripten-6.0.12-node_modules.tar.gz: cfdeeea5bb9714047ce827d35e263ddc0fb11578
